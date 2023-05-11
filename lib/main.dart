@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_demo_application/component/btn_select.dart';
 
 import 'battery_monitor_list.dart';
+import 'button/elevated_button.dart';
 
 void main() {
   SystemChrome.setEnabledSystemUIOverlays([]); // 全屏显示
@@ -28,9 +29,10 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: Colors.blue,
+          useMaterial3: true
         ),
-        home: const MyHomePage(
-          title: "hello",
+        home: CustomElevatedWidget(
+
         ));
   }
 }
