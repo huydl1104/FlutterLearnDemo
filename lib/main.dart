@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           useMaterial3: true
         ),
-        home: CustomElevatedWidget(
+        home: const CustomElevatedWidget(
 
         ));
   }
