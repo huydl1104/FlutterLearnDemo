@@ -39,6 +39,8 @@ class Example3 extends StatelessWidget {
             crossAxisCount: 3,
           ),
           itemCount: 300,
+          //禁止滑动
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             return Card(
               color: Colors.amber,
