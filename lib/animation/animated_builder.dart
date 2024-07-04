@@ -43,12 +43,14 @@ class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
-      child: Container(
-        width: 200.0,
-        height: 200.0,
-        color: Colors.green,
-        child: const Center(
-          child: Text('Whee!'),
+      child: Center(
+        child: Container(
+          width: 140.0,
+          height: 100.0,
+          color: Colors.green,
+          child: const Center(
+            child: Text('Whee!'),
+          ),
         ),
       ),
       builder: (BuildContext context, Widget? child) {

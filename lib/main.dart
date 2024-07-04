@@ -6,7 +6,7 @@ import 'battery_monitor_list.dart';
 import 'button/elevated_button.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIOverlays([]); // 全屏显示
+  // SystemChrome.setEnabledSystemUIOverlays([]); // 全屏显示
   runApp(const MyApp());
 }
 

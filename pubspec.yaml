@@ -47,6 +47,9 @@ dependencies:
   # 数据库
   sqflite: ^2.2.2
   path: ^1.8.2
+  fl_chart: ^0.62.0
+  flutter_popup: ^3.3.0
+
 
 dev_dependencies:
   flutter_test:
@@ -102,4 +105,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   assets:
-    - images/
+    - assets/images/
+    - assets/lottie/
