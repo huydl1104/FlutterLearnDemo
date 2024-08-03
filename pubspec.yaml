@@ -49,6 +49,7 @@ dependencies:
   path: ^1.8.2
   fl_chart: ^0.62.0
   flutter_popup: ^3.3.0
+  card_swiper: ^3.0.1
 
 
 dev_dependencies:
@@ -106,4 +107,5 @@ flutter:
 
   assets:
     - assets/images/
+    - images/
     - assets/lottie/

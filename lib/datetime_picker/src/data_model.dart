@@ -59,7 +59,7 @@ class CommonPickerModel extends BasePickerModel {
   late LocaleType locale;
 
   CommonPickerModel({LocaleType? locale})
-      : this.locale = locale ?? LocaleType.en;
+      : locale = locale ?? LocaleType.en;
 
   @override
   String? leftStringAtIndex(int index) {
@@ -162,8 +162,7 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   void _fillLeftLists() {
-    this.leftList = List.generate(maxTime.year - minTime.year + 1, (int index) {
-      // print('LEFT LIST... ${minTime.year + index}${_localeYear()}');
+    leftList = List.generate(maxTime.year - minTime.year + 1, (int index) {
       return '${minTime.year + index}${_localeYear()}';
     });
   }
@@ -195,15 +194,15 @@ class DatePickerModel extends CommonPickerModel {
     int minMonth = _minMonthOfCurrentYear();
     int maxMonth = _maxMonthOfCurrentYear();
 
-    this.middleList = List.generate(maxMonth - minMonth + 1, (int index) {
-      return '${_localeMonth(minMonth + index)}';
+    middleList = List.generate(maxMonth - minMonth + 1, (int index) {
+      return _localeMonth(minMonth + index);
     });
   }
 
   void _fillRightLists() {
     int maxDay = _maxDayOfCurrentMonth();
     int minDay = _minDayOfCurrentMonth();
-    this.rightList = List.generate(maxDay - minDay + 1, (int index) {
+    rightList = List.generate(maxDay - minDay + 1, (int index) {
       return '${minDay + index}${_localeDay()}';
     });
   }
@@ -378,7 +377,7 @@ class TimePickerModel extends CommonPickerModel {
   bool showSecondsColumn;
 
   TimePickerModel(
-      {DateTime? currentTime, LocaleType? locale, this.showSecondsColumn: true})
+      {DateTime? currentTime, LocaleType? locale, this.showSecondsColumn = true})
       : super(locale: locale) {
     this.currentTime = currentTime ?? DateTime.now();
 
@@ -421,18 +420,20 @@ class TimePickerModel extends CommonPickerModel {
 
   @override
   String rightDivider() {
-    if (showSecondsColumn)
+    if (showSecondsColumn) {
       return ":";
-    else
+    } else {
       return "";
+    }
   }
 
   @override
   List<int> layoutProportions() {
-    if (showSecondsColumn)
+    if (showSecondsColumn) {
       return [1, 1, 1];
-    else
+    } else {
       return [1, 1, 0];
+    }
   }
 
   @override
@@ -481,9 +482,9 @@ class Time12hPickerModel extends CommonPickerModel {
   @override
   String? rightStringAtIndex(int index) {
     if (index == 0) {
-      return i18nObjInLocale(this.locale)["am"] as String?;
+      return i18nObjInLocale(locale)["am"] as String?;
     } else if (index == 1) {
-      return i18nObjInLocale(this.locale)["pm"] as String?;
+      return i18nObjInLocale(locale)["pm"] as String?;
     } else {
       return null;
     }
@@ -583,10 +584,10 @@ class DateTimePickerModel extends CommonPickerModel {
     DateTime time = currentTime.add(Duration(days: index));
     if (isAtSameDay(minTime, time)) {
       var index = min(24 - minTime!.hour - 1, _currentMiddleIndex);
-      this.setMiddleIndex(index);
+      setMiddleIndex(index);
     } else if (isAtSameDay(maxTime, time)) {
       var index = min(maxTime!.hour, _currentMiddleIndex);
-      this.setMiddleIndex(index);
+      setMiddleIndex(index);
     }
   }
 
