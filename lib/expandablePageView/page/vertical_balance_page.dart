@@ -1,8 +1,8 @@
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/small_info_tile.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/widgets/small_deposit_button.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/widgets/small_withdraw_button.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/small_info_tile.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/widgets/small_deposit_button.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/widgets/small_withdraw_button.dart';
 
 class VerticalBalancePage extends StatelessWidget {
   const VerticalBalancePage({Key? key}) : super(key: key);

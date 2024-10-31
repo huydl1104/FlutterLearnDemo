@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_demo_application/component/btn_select.dart';
+import 'package:flutter_learn_demo_3/component/btn_select.dart';
 
 import 'battery_monitor_list.dart';
 import 'button/elevated_button.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIOverlays([]); // 全屏显示
+  // SystemChrome.setEnabledSystemUIOverlays([]); // 全屏显示
   runApp(const MyApp());
 }
 

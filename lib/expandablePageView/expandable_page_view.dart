@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_application/expandablePageView/page/balance_page.dart';
-import 'package:flutter_demo_application/expandablePageView/page/basic_examples_page.dart';
-import 'package:flutter_demo_application/expandablePageView/page/vertical_balance_page.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/basic_examples_page.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/vertical_balance_page.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/balance_page.dart';
 
 void main() {
   runApp(const MyApp());

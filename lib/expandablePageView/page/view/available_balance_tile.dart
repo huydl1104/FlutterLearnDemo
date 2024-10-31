@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_application/expandablePageView/page/page.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AvailableBalanceTile extends StatelessWidget {

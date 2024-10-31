@@ -1,9 +1,9 @@
 
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/available_balance_tile.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/cards_tile.dart';
-import 'package:flutter_demo_application/expandablePageView/page/view/contacts_tile.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/available_balance_tile.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/cards_tile.dart';
+import 'package:flutter_learn_demo_3/expandablePageView/page/view/contacts_tile.dart';
 
 import 'view/widgets/hide_cards_button.dart';
 
