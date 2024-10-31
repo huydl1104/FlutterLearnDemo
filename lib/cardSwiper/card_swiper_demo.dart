@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_application/cardSwiper/config.dart';
-import 'package:flutter_demo_application/cardSwiper/example_custom.dart';
-import 'package:flutter_demo_application/cardSwiper/example_swiper_in_scrollview.dart';
+import 'package:flutter_learn_demo_3/cardSwiper/config.dart';
+import 'package:flutter_learn_demo_3/cardSwiper/example_custom.dart';
+import 'package:flutter_learn_demo_3/cardSwiper/example_swiper_in_scrollview.dart';
 
 
 void main() => runApp(const MyApp());
