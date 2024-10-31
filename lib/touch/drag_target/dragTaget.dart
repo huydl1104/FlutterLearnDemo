@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+///用于实现拖放操作的目标区域。它通常与 Draggable 小部件一起使用，以创建拖放功能。
 void main() {
   runApp(const MyDragTargetApp());
 }

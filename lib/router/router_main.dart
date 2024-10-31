@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,9 +27,12 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: 'details',
+      name: 'details',
+      path: '/details',
       builder: (BuildContext context, GoRouterState state) {
-        return const DetailsScreen();
+        final data = state.queryParameters['test'];
+        debugPrint("传递数据 data->$data");
+        return DetailsScreen(data);
       },
     ),
   ],
@@ -60,8 +65,16 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => context.go('/details'),
+              onPressed: () => context.goNamed('details',queryParameters: {'test':"123"}),
               child: const Text('Go to the Details screen'),
+            ),
+
+            ElevatedButton(
+              onPressed: () async {
+                final state = await context.pushNamed<String>('details',queryParameters: {'test':"4444"});
+                debugPrint('返回值 state ->$state');
+              },
+              child: const Text('Go to the Details screen params '),
             ),
           ],
         ),
@@ -70,13 +83,27 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-/// The details screen
-class DetailsScreen extends StatelessWidget {
+
+class DetailsScreen extends StatefulWidget {
   /// Constructs a [DetailsScreen]
-  const DetailsScreen({super.key});
+  String? parameter;
+  DetailsScreen(this.parameter, {super.key});
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint("DetailsScreen parameter->${widget.parameter}");
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: const Text('Details Screen')),
       body: Center(
@@ -84,8 +111,13 @@ class DetailsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <ElevatedButton>[
             ElevatedButton(
-              onPressed: () => context.go('/'),
+              onPressed: () => context.pop(),
               child: const Text('Go back to the Home screen'),
+            ),
+
+            ElevatedButton(
+              onPressed: () => context.pop("22222222"),
+              child: const Text('Go back to the Home screen params'),
             ),
           ],
         ),

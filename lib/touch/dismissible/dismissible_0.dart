@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///一个小部件，可以通过在指定方向上拖动来取消。
 void main() {
   runApp(const MyDismissibleApp());
 }
